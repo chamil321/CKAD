@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2021-09-16T10:42:47Z"
+  name: chamil
+  resourceVersion: "584362"
+  uid: 5b2a0896-92bd-45af-a852-c4007fcaf3f6
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

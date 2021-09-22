@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-test
+spec:
+  rules:
+  - host: wear.my-online-store.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: wear-service
+            port:
+              number: 80
+        path: /wear
+        pathType: Prefix
+status:
+  loadBalancer: {}
+
+
+  # kubectl create ingress ingress-test --rule="wear.my-online-store.com/wear*=wear-service:80" --dry-run=client -o yaml

@@ -1,0 +1,21 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: jj
+spec:
+  jobTemplate:
+    metadata:
+      name: jj
+    spec:
+      template:
+        spec:
+          containers:
+          - image: nginx
+            name: jj
+            resources: {}
+          restartPolicy: OnFailure
+  schedule: '*/1 * * * * '
+status: {}
+
+
+# k create cronjob jj --dry-run=client --image=nginx --schedule="*/1 * * * * " -o yaml
